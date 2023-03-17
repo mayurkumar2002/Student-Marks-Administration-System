@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center">Edit Student Details</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/students/<%= student._id %>?_method=PUT" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Student Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="student name" id="name" value="<%= student.name %>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="batch">Batch</label>
+                    <input class="form-control" type="text" name="batch" placeholder="student batch" id="batch" value="<%= student.batch %>" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="semester">Semester</label>
+                    <input class="form-control" type="number" name="semester" placeholder="semester" id="semester" value="<%= student.semester %>" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label" for="regno">Registration No.</label>
+                    <input class="form-control" type="text" name="regno" placeholder="student regno" id="regno" value="<%= student.registrationNo %>" required>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-success">Edit</button>
+                </div>
+            </form>
+            <a class="btn btn-success" href="/students/<%= student._id %>">Cancel</a>
+        </div>
+    </div>

@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center">Add a Student</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/students" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Student Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Student name" id="name" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="batch">Batch</label>
+                    <input class="form-control" type="text" name="batch" placeholder="Student batch" id="batch" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="semester">Semester</label>
+                    <input class="form-control" type="number" name="semester" placeholder="Semester" id="semester" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="registrationNo">Registration No.</label>
+                    <input class="form-control" type="text" name="registrationNo" placeholder="Reg. No." id="registrationNo" required>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Student</button>
+                </div>
+            </form>
+            <a href="/students" class="btn btn-success">All Students</a>
+        </div>
+    </div>

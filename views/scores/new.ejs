@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center">Add Marks of <%= student.name %></h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/scores/<%= student._id %>" method="POST">
+                <!-- checkPoint -->
+                <% for(subject of subjects){ %>
+                    <div class="mb-3">
+                        <label class="form-label" for="score"><%= subject.name %></label>
+                        <input class="form-control" type="number" name="<%= subject.id %>" placeholder="Enter Marks" id="score" required>
+                    </div>
+                <% } %>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Marks</button>
+                </div>
+            </form>
+            <a class="btn btn-success" href="/students/<%= student._id %>">Cancel</a>
+            <a class="btn btn-success ml-3" href="/students">All Students</a>
+        </div>
+    </div>

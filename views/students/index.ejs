@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <style>
+        body{
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("https://images.unsplash.com/photo-1594312915251-48db9280c8f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGVkdWNhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column vh-100">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Students</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/students">All Students</a>
+                    <a class="nav-link" href="/students/new">New Student</a>
+                    <a class="nav-link" href="/subjects">All Subjects</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container mt-5">
+        
+        <h1 class="text-light">All Students</h1>
+        <% for(let student of students){ %>
+        <ul>
+            <h4><li><a class="link-warning" href="/students/<%= student._id %>"><%= student.name %></a></li></h4>
+        </ul>
+        <% } %>
+
+        <a class="btn btn-success text-light m-3" href="/students/new">New Student</a>
+        <a class="btn btn-success text-light m-3"href="/subjects">Subjects</a>
+    </main>
+
+    <footer class="footer bg-dark py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">&copy; Student Marks Administration 2023</span>
+        </div>
+    </footer>
+</body>
+</html>

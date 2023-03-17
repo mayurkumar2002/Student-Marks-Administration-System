@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center mb-3"><%= student.name %></h1>
+        <div class="col-md-6 offset-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Name: <%= student.name %></h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item "><strong>Batch: </strong> <%= student.batch %></li>
+                        <li class="list-group-item"><strong>Semester: </strong><%= student.semester %></li>
+                        <li class="list-group-item"><strong>Registration No: <%=student.registrationNo%></strong></li>
+                    </ul>
+                    <% if(filled){ %>
+                        <div class="card-body mt-0">
+                            <a class="btn btn-sm btn-success" href="/scores/<%= student._id %>">Show Marks</a>
+                        </div>
+                    <% } %>
+                    <% if(!filled){ %>
+                        <div class="card-body mt-0">
+                            <a class="btn btn-sm btn-success" href="/scores/<%= student._id %>/new">Add Marks</a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <form class="mt-auto mx-2" action="/students/<%= student._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-sm btn-danger">Delete</button>
+            </form>
+            <a class="btn btn-success mt-3 mx-2" href="/students/<%= student._id %>/edit">Edit Student</a>
+            <a class="btn btn-success mt-3 mx-2" href="/students">All Students</a>
+        </div>
+        
+    </div>

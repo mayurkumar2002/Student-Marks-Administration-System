@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class=" ml-3 mb-3">Subjects</h1>
+            <div class="card" style="width: 24rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">List of subjects opted by students</h5>
+                  <p class="card-text">A fanatic is one who can't change his mind and won't change the subject.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <% for(let subject of subjects){ %>
+                        <li class="list-group-item list-group-item-action"><h5><a class="link-dark text-decoration-none" href="/subjects/<%= subject._id %>"><%= subject.name %></a></h5></li>
+                    <% } %>
+                </ul>
+                <% if(filled){ %>
+                    <div class="ml-2 my-2">
+                        <a class="btn btn-success btn-sm" href="/subjects/new">New Subject</a>
+                    </div>
+                    <% } %>
+              </div>
+              <a class="btn btn-success my-3 px-3" href="/students">Back</a>
+        </div>
+    </div>

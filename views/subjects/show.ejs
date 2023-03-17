@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Subject Name: <%= subject.name %></h4>
+                    <hr>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item "><strong>Subject Code: </strong> <%= subject.subCode %></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <form action="/subjects/<%= subject._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            <a class="btn btn-success my-3" href="/subjects">All Subject</a>
+            <a class="btn btn-success ml-3" href="/subjects/<%= subject._id %>/edit">Edit Subject</a>
+        </div>
+    </div>
