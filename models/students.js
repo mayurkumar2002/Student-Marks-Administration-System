@@ -7,8 +7,7 @@ const studentSchema=new mongoose.Schema({
         required: true
     },
     batch: {
-        type: String,
-        required: true
+        type: String
     },
     semester: {
         type: Number,
